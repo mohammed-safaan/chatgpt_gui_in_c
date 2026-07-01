@@ -1,6 +1,6 @@
 # chatgpt_clone
 
-A simple raylib application that displays a window with text rendering. Built as a starting point for further development.
+A ChatGPT-style AI chat interface built with raylib. Features a clean, minimal UI for conversing with AI models.
 
 ## Prerequisites
 
@@ -31,11 +31,36 @@ Install the recommended extensions listed in the Prerequisites section.
 
 The project includes a `.vscode/settings.json` that configures clangd to use the build directory for compile commands. After building, clangd will automatically provide intellisense.
 
-### 3. Configure CMake Tools
+Create `.vscode/settings.json` with the following content:
+
+```json
+{
+  "clangd.path": "<PATH_TO_CLANGD>",
+  "clangd.arguments": [
+    "--compile-commands-dir=${workspaceFolder}/build",
+    "--query-driver=<PATH_TO_GCC>"
+  ],
+  "sonarlint.pathToCompileCommands": "${workspaceFolder}\\compile_commands.json"
+}
+```
+
+Replace `<PATH_TO_CLANGD>` and `<PATH_TO_GCC>` with your actual paths.
+
+### 3. Configure SonarQube
+
+SonarQube uses `compile_commands.json` for analysis. Generate it during configuration:
+
+```sh
+cmake --preset default
+```
+
+The file will be created at `compile_commands.json` in the project root.
+
+### 4. Configure CMake Tools
 
 CMake Tools will auto-detect the `CMakePresets.json` file. Use the preset named "default" for building.
 
-### 4. Configure Debugger
+### 5. Configure Debugger
 
 For debugging, install the CodeLLDB extension. The project includes example launch configurations in the Debugging section below.
 
