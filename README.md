@@ -1,0 +1,54 @@
+# chatgpt_clone
+
+A simple raylib application that displays a window with text rendering. Built as a starting point for further development.
+
+## Prerequisites
+
+- CMake 3.20+
+- MinGW-w64 (GCC) — ensure `gcc` is in your `PATH`
+- Internet connection (first build only, to fetch raylib source)
+- [Visual Studio Code](https://code.visualstudio.com/) (recommended)
+
+### Recommended VS Code Extensions
+
+Install these extensions for an enhanced development experience:
+
+- **clangd** — C/C++ intellisense and code completion
+- **SonarQube** — Code quality analysis
+- **C/C++** — Microsoft's C/C++ extension (for debugging)
+- **CMake Tools** — CMake integration
+- **CodeLLDB** — Debugger for C/C++
+
+> **Note:** These extensions are recommended but not required. You can build and run the project without them.
+
+## Build
+
+```sh
+cmake -B build -S . -G Ninja -DCMAKE_C_COMPILER="gcc"
+cmake --build build
+```
+
+## Run
+
+```sh
+build\chatgpt_clone.exe
+```
+
+## How It Works
+
+- raylib is fetched and built from source via CMake `FetchContent` — no package manager required
+- raylib and GLFW are statically linked into the final executable
+- The resulting `.exe` is self-contained and runs on any Windows system with OpenGL 3.3 support
+
+## Project Structure
+
+```
+chatgpt_clone/
+├── CMakeLists.txt   # Build configuration
+├── main.c           # Application entry point
+└── README.md
+```
+
+## License
+
+This project uses [raylib](https://www.raylib.com/) (zlib license).
