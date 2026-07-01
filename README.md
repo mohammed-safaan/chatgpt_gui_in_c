@@ -21,6 +21,24 @@ Install these extensions for an enhanced development experience:
 
 > **Note:** These extensions are recommended but not required. You can build and run the project without them.
 
+## VS Code Setup
+
+### 1. Install Extensions
+
+Install the recommended extensions listed in the Prerequisites section.
+
+### 2. Configure clangd
+
+The project includes a `.vscode/settings.json` that configures clangd to use the build directory for compile commands. After building, clangd will automatically provide intellisense.
+
+### 3. Configure CMake Tools
+
+CMake Tools will auto-detect the `CMakePresets.json` file. Use the preset named "default" for building.
+
+### 4. Configure Debugger
+
+For debugging, install the CodeLLDB extension. The project includes example launch configurations in the Debugging section below.
+
 ## Build
 
 ```sh
