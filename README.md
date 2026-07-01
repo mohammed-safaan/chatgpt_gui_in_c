@@ -41,10 +41,32 @@ For debugging, install the CodeLLDB extension. The project includes example laun
 
 ## Build
 
+### Using CMake Presets (Recommended)
+
+The project includes a `CMakePresets.json` file that defines build configurations:
+
+```sh
+# Configure using the default preset
+cmake --preset default
+
+# Build using the default preset
+cmake --build --preset default
+```
+
+### Using Manual Commands (Alternative)
+
+If you prefer manual configuration:
+
 ```sh
 cmake -B build -S . -G Ninja -DCMAKE_C_COMPILER="gcc"
 cmake --build build
 ```
+
+### Build Output
+
+The build process creates:
+- `build/chatgpt_clone.exe` — The main executable
+- `build/compile_commands.json` — Compilation database for clangd
 
 ## Run
 
