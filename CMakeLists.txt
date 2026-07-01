@@ -18,4 +18,5 @@ set(BUILD_GAMES    OFF CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(raylib)
 
 add_executable(${PROJECT_NAME} main.c)
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/raygui)
 target_link_libraries(${PROJECT_NAME} PRIVATE raylib opengl32 gdi32 winmm)
