@@ -74,6 +74,52 @@ The build process creates:
 build\chatgpt_clone.exe
 ```
 
+## Debugging
+
+### Prerequisites
+
+- Install the **CodeLLDB** extension
+- Build the project with debug symbols (included by default)
+
+### Launch Configuration
+
+Create a `.vscode/launch.json` file with the following content:
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug chatgpt_clone",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/chatgpt_clone.exe",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false
+    }
+  ]
+}
+```
+
+### Debugging Steps
+
+1. Set breakpoints in your code by clicking in the gutter
+2. Press `F5` or use Run > Start Debugging
+3. The debugger will stop at your breakpoints
+4. Use the Debug toolbar to step through code
+5. Inspect variables in the Variables panel
+
+### Debug Build
+
+To ensure debug symbols are included, build with:
+
+```sh
+cmake --preset default -DCMAKE_BUILD_TYPE=Debug
+cmake --build --preset default
+```
+
 ## How It Works
 
 - raylib is fetched and built from source via CMake `FetchContent` — no package manager required
