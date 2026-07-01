@@ -130,8 +130,13 @@ cmake --build --preset default
 
 ```
 chatgpt_clone/
-├── CMakeLists.txt   # Build configuration
-├── main.c           # Application entry point
+├── CMakeLists.txt       # Build configuration
+├── CMakePresets.json    # CMake preset definitions
+├── main.c               # Application entry point
+├── compile_commands.json # Compilation database (generated)
+├── .vscode/
+│   └── settings.json    # VS Code workspace settings
+├── build/               # Build output directory
 └── README.md
 ```
 
